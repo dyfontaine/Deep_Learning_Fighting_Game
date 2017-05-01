@@ -197,3 +197,4 @@ for i in range(0,10):
     im = skimage.color.gray2rgb(x_test[i].squeeze())
     # step into the function
     h = heatmap.explain_prediction_heatmap(im, nmasks=(3,5,7,9,11))
+

@@ -196,3 +196,9 @@ for i in range(0,10):
     im = x_test2[i]
     # step into the function
     h = heatmap.explain_prediction_heatmap(im, nmasks=(3,5,7,9,11))
+
+#%%  check proportion class labels
+y_test[y_test==0].size/len(y_test)
+y_test[y_test==1].size/len(y_test)
+y_test[y_test==2].size/len(y_test)
+y_test[y_test==3].size/len(y_test)
