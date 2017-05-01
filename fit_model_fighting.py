@@ -30,7 +30,8 @@ def read_data():
     imList = np.ndarray((n_images, rows, columns, 3), dtype=np.uint8)
     x = 0
     ct = 0
-    for infile in glob.glob('C:/Users/Dylan/Documents/Northwestern/Spring 2017/Deep Learning/Deep_Learning_Project_LOCAL_FILES/screencaps_fighting/game_*/*.jpg'):
+    for infile in glob.glob('C:/Users/mwcho/Desktop/trainimages/screencaps_fighting/game_*/*.jpg'):
+#    for infile in glob.glob('C:/Users/Dylan/Documents/Northwestern/Spring 2017/Deep Learning/Deep_Learning_Project_LOCAL_FILES/screencaps_fighting/game_*/*.jpg'):
         imList[ct] = read_colimage(infile)
         ct += 1
         if infile[-7:] == '500.jpg':
@@ -41,7 +42,8 @@ def read_data():
     #read in labels
     print('reading labels...')
     y = []
-    for infile in glob.glob('C:/Users/Dylan/Documents/Northwestern/Spring 2017/Deep Learning/Deep_Learning_Project_LOCAL_FILES/screencaps_fighting/game_*/*.csv'):
+    for infile in glob.glob('C:/Users/mwcho/Desktop/trainimages/screencaps_fighting/game_*/*.csv'):
+#    for infile in glob.glob('C:/Users/Dylan/Documents/Northwestern/Spring 2017/Deep Learning/Deep_Learning_Project_LOCAL_FILES/screencaps_fighting/game_*/*.csv'):
         newY = pd.read_csv(infile, header=None, names=['stroke'])
         newY = newY['stroke'].values.tolist()
         y.extend(newY)
@@ -105,7 +107,7 @@ history = model.fit(x_train, y_train2,
                     verbose=1,
                     validation_data=(x_test, y_test2))
 #%%
-score = model.evaluate(x_test, y_test, verbose=0)
+score = model.evaluate(x_test, y_test2, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
@@ -117,6 +119,7 @@ from sklearn.metrics import confusion_matrix
 pClasses = model.predict_classes(x_test, batch_size=32, verbose=0)
 probs = model.predict_proba(x_test, batch_size=32, verbose=0)
 
+# top 2 accuracy?
 #function to get top-k accuracy
 def top_k_acc(y_actual,y_prob,k):
     cor = 0
