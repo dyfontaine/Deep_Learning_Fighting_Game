@@ -19,7 +19,7 @@ import scipy
 
 size = 56,56
 rows, columns = 56, 56
-n_images = 12500
+n_images = 25000
 num_classes = 4
 
 #function to read in and resize a color image
@@ -56,11 +56,18 @@ def read_data():
 
 #x_all, y_all = read_data()
 
-#y_all2 = keras.utils.to_categorical(y_all, num_classes)
-X_train = x_all[:10000]
-y_train = y_all[:10000]
-X_test = x_all[10000:]
-y_test = y_all[10000:]
+for yyy in range(0,y_all.shape[0]):
+    if y_all[yyy] == 9:
+        y_all[yyy] = 1
+    elif y_all[yyy] == 10:
+        y_all[yyy] = 2
+    elif y_all[yyy] == 11:
+        y_all[yyy] = 3
+
+X_train = x_all[:20000]
+y_train = y_all[:20000]
+X_test = x_all[20000:]
+y_test = y_all[20000:]
 
 
 #%% Create demo data
