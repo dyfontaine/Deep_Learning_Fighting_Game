@@ -3,7 +3,7 @@ Course project for MSIA490: Introduction to Deep Learing
 
 Team Members: Dylan Fontaine, Dustin Fontaine, Michael Cho, Annie Didier
 
-Video Demo of the AI we trained: https://www.youtube.com/watch?v=hZuv2RaDGE8 
+Video Demo of the AI we trained: https://www.youtube.com/watch?v=hZuv2RaDGE8 (AI is the green player)
 
 ### File Descriptions
 **fit_models/fit_sequential.py:** fits basic sequential model to individual gameplay images
