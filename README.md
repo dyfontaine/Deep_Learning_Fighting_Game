@@ -3,6 +3,8 @@ Course project for MSIA490: Introduction to Deep Learing
 
 Team Members: Dylan Fontaine, Dustin Fontaine, Michael Cho, Annie Didier
 
+Link to blog post about project: http://sites.northwestern.edu/msia/2017/09/19/learning-to-fight-deep-learning-applied-to-video-games/
+
 Video Demo of the AI we trained: https://www.youtube.com/watch?v=hZuv2RaDGE8 (AI is the green player)
 
 ### File Descriptions
